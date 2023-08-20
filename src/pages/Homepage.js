@@ -11,8 +11,7 @@ const Homepage = () => {
   let [page, setPage] = useState(1);
   let [currentsearch, setCurrentsearch] = useState("");
 
-  
-  const auth = "VXFT2HUGP5Z37TaNvqX7Vv6GkHPqPAFzqHDkq9JArfZAu3TxoyyuJ5e9";
+  const auth = `${process.env.apiauth}`;
   const initialURL = "https://api.pexels.com/v1/curated?page=1&per_page=15";
   const searchURL = `https://api.pexels.com/v1/search?query=${input}&per_page=15&page=1`;
 
@@ -28,8 +27,7 @@ const Homepage = () => {
   const morePicture = async () => {
     let newURL;
     setPage(page + 1);
-    if (currentsearch
-       === "") {
+    if (currentsearch === "") {
       newURL = `https://api.pexels.com/v1/curated?page=${page + 1}&per_page=15`;
     } else {
       newURL = `https://api.pexels.com/v1/search?query=${currentsearch}&per_page=15&page=${
