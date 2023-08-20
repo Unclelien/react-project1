@@ -6,7 +6,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>//嚴謹語法
+  </React.StrictMode>
 );
 
 
