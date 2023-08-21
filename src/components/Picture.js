@@ -7,12 +7,9 @@ const Picture = ({ data }) => {
       <div className="imageContainer">
         <img src={data.src.large} />
       </div>
-      <p>
-        在此下載圖片
         <a target="_blank" href={data.src.large}>
-          按一下
+          按一下, 在此下載圖片
         </a>
-      </p>
     </div>
   );
 };
