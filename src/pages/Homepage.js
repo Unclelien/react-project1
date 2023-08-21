@@ -3,8 +3,6 @@ import Search from "../components/Search";
 import axios from "axios";
 import Picture from "../components/Picture";
 
-//logical operater &&
-
 const Homepage = () => {
   let [input, setInput] = useState();
   let [data, setData] = useState(null);
@@ -38,6 +36,7 @@ const Homepage = () => {
       headers: { Authorization: auth },
     });
     setData(data.concat(result.data.photos));
+    console.log(data);
   };
 
   useEffect(() => {
@@ -54,8 +53,8 @@ const Homepage = () => {
       />
       <div className="pictures">
         {data &&
-          data.map((d) => {
-            return <Picture data={d} />;
+          data.map((d, i) => {
+            return <Picture data={d} key={i} />;
           })}
       </div>
       <div className="morePicture">
